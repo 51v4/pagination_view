@@ -85,6 +85,10 @@ class PaginationViewState<T> extends State<PaginationView<T>> {
       duration: const Duration(milliseconds: 200),
     );
   }
+  
+  Future<void> forceRefresh() async {
+    await _cubit!.refreshPaginatedList();
+  }
 
   @override
   Widget build(BuildContext context) {
